@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+<!--
+  ~ /*
+  ~  *  Developed by MageConnect
+  ~  *  Do not edit or add to this file if you wish to upgrade This to newer
+  ~  *  versions in the future.
+  ~  *  @author      minhhaislvl@gmail.com
+  ~  *
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="experian" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Autocomplete</label>
+            <tab>service</tab>
+            <resource>MageConnect_Autocomplete::experian</resource>
+            <group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Settings</label>
+                <field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Auth-Token</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="service_url" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Service Url</label>
+                    <comment><![CDATA[URL to query address data]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="service_url_format" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>URL To Get Formatted Address</label>
+                    <comment><![CDATA[URL to get formatted address]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="timeout" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Timeout</label>
+                    <comment><![CDATA[Seconds]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="min_length" translate="label" type="text" sortOrder="65" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Min Search Length</label>
+                    <comment><![CDATA[Number of characters that the search is triggered]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="field_patterns" translate="label comment" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Autocomplete Fields For My Account</label>
+                    <frontend_model>MageConnect\Autocomplete\Block\Adminhtml\System\Config\Form\Field\TrackingFields</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="field_patterns_shipping_checkout" translate="label comment" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Autocomplete Fields For Shipping On Checkout Page</label>
+                    <frontend_model>MageConnect\Autocomplete\Block\Adminhtml\System\Config\Form\Field\TrackingFields</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="field_patterns_billing_checkout" translate="label comment" sortOrder="90" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Autocomplete Fields For Billing On Checkout Page</label>
+                    <frontend_model>MageConnect\Autocomplete\Block\Adminhtml\System\Config\Form\Field\TrackingFields</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="country_dataset" translate="label comment" sortOrder="100" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Country Dataset mappings</label>
+                    <frontend_model>MageConnect\Autocomplete\Block\Adminhtml\System\Config\Form\Field\CountryDataset</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment><![CDATA[Don't need to specify for AU]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

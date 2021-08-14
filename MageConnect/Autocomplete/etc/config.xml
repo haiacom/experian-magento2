@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!--
+  ~  Developed by MageConnect
+  ~  Do not edit or add to this file if you wish to upgrade This to newer
+  ~  versions in the future.
+  ~  @author      minhhaislvl@gmail.com
+  ~
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <experian>
+            <settings>
+                <active>1</active>
+                <service_url>https://api.experianaperture.io/address/search/v1</service_url>
+                <service_url_format>https://api.experianaperture.io/address/format/v1</service_url_format>
+                <timeout>5</timeout>
+                <min_length>3</min_length>
+                <field_patterns>{"_1622832770983_983":{"name":"Address","pattern":"#street_1","active":"1"},"_1622832777578_578":{"name":"City","pattern":"#city","active":"0"},"_1622832778596_596":{"name":"Postcode","pattern":"#zip","active":"0"}}</field_patterns>
+                <field_patterns_billing_checkout>{"_1623032010113_113":{"name":"Street","pattern":".billing-address-form input[name=\"street[0]\"]","active":"1"}}</field_patterns_billing_checkout>
+                <field_patterns_shipping_checkout>{"_1623031996535_535":{"name":"Street","pattern":"#co-shipping-form input[name=\"street[0]\"]","active":"1"}}</field_patterns_shipping_checkout>
+            </settings>
+        </experian>
+    </default>
+</config>

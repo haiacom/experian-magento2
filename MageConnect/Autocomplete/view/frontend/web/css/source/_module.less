@@ -1,0 +1,21 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .address-picklist-container {
+        background: @color-white;
+        pading: 0 10px;
+        cursor: default;
+        .use-address-entered {
+            cursor: pointer;
+        }
+        .address-picklist {
+            cursor: pointer;
+        }
+
+        > .address-picklist > div:hover {
+            .lib-css(background, @collapsible-nav-item-hover);
+        }
+    }
+}
